@@ -1,0 +1,186 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Navbar */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    padding-top: 60px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navbar .brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar .btn-outline {
+    border: 2px solid #667eea;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #667eea;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline:hover {
+    background: #667eea;
+    color: #fff;
+}
+.card h2 {
+    text-align: center !important;
+    margin-bottom: 20px;
+}
+
+/* Container & Card */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.checkout-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+/* Sections */
+.checkout-section {
+    margin-bottom: 10px;
+}
+
+.checkout-section h3 {
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+}
+
+/* Customer Info Grid */
+.info-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    flex: 1 1 45%;
+    background: #f8f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.info-item p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Order Table */
+.order-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.order-details th, .order-details td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    text-align: left;
+}
+
+.order-details th {
+    background-color: #667eea;
+    color: #fff;
+    font-weight: 600;
+}
+
+.order-details tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+.order-details tr:hover {
+    background-color: #e0e7ff;
+}
+
+.total-label, .total-value {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Delivery Address */
+.delivery-address .field {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.delivery-address .field label {
+    font-weight: 600;
+}
+
+.delivery-address select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+button.btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+}
+
+.actions {
+    display: flex;
+    justify-content: center; /* căn giữa button */
+    margin-top: 20px;
+}
+
+/* Empty cart */
+.checkout-card p {
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+}

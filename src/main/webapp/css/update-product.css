@@ -1,0 +1,258 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    box-sizing: border-box;
+    background: #1f2937;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar .brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .btn {
+    background: #2563eb;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+    background: #1d4ed8;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 950px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Title */
+.container h1 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+/* Search form */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    width: 250px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.35);
+    transform: translateY(-2px);
+}
+
+
+/* Product table */
+.table-container {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.product-table th, .product-table td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 15px;
+}
+
+.product-table th {
+    background: #f1f5ff;
+    color: #1f2937;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.product-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.product-table tr:hover {
+    background: #eef2ff;
+    transition: 0.3s ease;
+}
+
+/* Edit button */
+.btn-edit {
+    background: #2563eb;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+    background: #1d4ed8;
+}
+
+/* No result message */
+.no-result {
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+/* ==== Search Form ==== */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Ô nhập từ khóa */
+form input[type="text"] {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1.5px solid #cbd5e1;
+    width: 260px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.25s ease;
+    background-color: #f9fafb;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+form input[type="text"]::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+form input[type="text"]:focus {
+    border-color: #2563eb;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+}
+
+/* Nút Search */
+.btn-search {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(37, 99, 235, 0.25);
+}
+
+.btn-search:hover {
+    background: #1d4ed8;
+    box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    form {
+        flex-direction: column;
+    }
+    form input[type="text"],
+    .btn-search {
+        width: 100%;
+    }
+}
+
+.alert {
+    margin: 15px auto;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 80%;
+}

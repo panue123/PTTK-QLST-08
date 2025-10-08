@@ -1,0 +1,161 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    padding-top: 70px; /* chừa chỗ cho navbar */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Welcome */
+.welcome {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    background: #f1f3f5;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* Cart link */
+.cart {
+    font-size: 16px;
+    background: transparent;
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cart i {
+    margin-right: 6px;
+    background: transparent;
+    color: #667eea;
+}
+
+.cart:hover {
+    color: #667eea;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Outline button (logout) */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center; /* canh giữa ngang */
+    align-items: center;     /* canh giữa dọc */
+    min-height: calc(100vh - 100px); /* trừ chiều cao navbar */
+}
+
+.container .btn {
+    width: 250px;       /* độ rộng nút vừa đủ */
+    height: 60px;       /* chiều cao */
+    font-size: 18px;    /* chữ to rõ hơn */
+    border-radius: 12px;
+}
+
+.intro-text {
+    margin-right: 40px;   /* khoảng cách dưới thay vì margin-right */
+    text-align: center;
+    color: #fff; /* trắng cho tiêu đề */
+}
+
+.intro-text h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff; /* trắng sáng */
+}
+
+.intro-text p {
+    font-size: 16px;
+    color: #e0e0e0; /* xám nhạt dễ đọc */
+}
+/* Thông báo chung */
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    margin: 15px auto;
+}
+
+/* Thông báo thành công */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Thông báo thất bại */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

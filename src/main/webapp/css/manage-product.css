@@ -1,0 +1,123 @@
+/* Tổng thể */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    box-sizing: border-box;
+    background: #1f2937;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar .brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-right .user {
+    color: #e5e7eb;
+    font-weight: 500;
+}
+
+.navbar .btn {
+    background: #2563eb;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+    background: #1d4ed8;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: 80px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.container .subtitle {
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 35px;
+}
+
+/* Khu vực các nút hành động */
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ✅ FIX CHIỀU RỘNG ĐỀU */
+.actions .btn-primary,
+.actions form button {
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    background: #2563eb;
+    padding: 14px 0;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    text-align: center;
+}
+
+.actions .btn-primary:hover,
+.actions form button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+/* Đảm bảo form không phá layout */
+.form-action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
