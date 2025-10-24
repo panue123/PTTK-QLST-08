@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,13 +47,13 @@
                 <tr>
                     <td>${p.name}</td>
                     <td>${p.description}</td>
-                    <td>${p.price} VND</td>
+                    <td><fmt:formatNumber value="${p.price}" pattern="#,##0.##"/> VND</td>
                     <td>${p.quantity}</td>
                     <td>
                         <form method="get" action="${pageContext.request.contextPath}/UpdateProductServlet">
                             <input type="hidden" name="action" value="edit"/>
                             <input type="hidden" name="id" value="${p.id}"/>
-                            <input type="submit" value="Edit" class="btn-edit"/>
+                            <input type="submit" value="Update" class="btn-edit"/>
                         </form>
                     </td>
                 </tr>

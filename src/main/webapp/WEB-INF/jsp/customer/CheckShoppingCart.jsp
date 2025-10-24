@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
                 <c:set var="sub" value="${od.price * od.quantity}"/>
                 <tr>
                     <td>${od.product.name}</td>
-                    <td>${od.price} VND</td>
+                    <td><fmt:formatNumber value="${od.price}" pattern="#,##0"/> VND</td>
                     <td>
                         <form method="get" action="${pageContext.request.contextPath}/CheckShoppingCartServlet">
                             <input type="hidden" name="action" value="update"/>
@@ -46,7 +47,7 @@
                             <input type="submit" value="Update"/>
                         </form>
                     </td>
-                    <td>${sub} VND</td>
+                    <td><fmt:formatNumber value="${sub}" pattern="#,##0"/> VND</td>
                     <td>
                         <a class="btn"
                            href="${pageContext.request.contextPath}/CheckShoppingCartServlet?action=remove&productId=${od.product.id}">
@@ -58,7 +59,7 @@
             </c:forEach>
             <tr>
                 <td colspan="3" style="text-align:right"><b>Total:</b></td>
-                <td colspan="2"><b>${total} VND</b></td>
+                <td colspan="2"><b><fmt:formatNumber value="${total}" pattern="#,##0"/> VND</b></td>
             </tr>
         </table>
         <br/>

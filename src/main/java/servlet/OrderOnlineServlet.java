@@ -41,7 +41,7 @@ public class OrderOnlineServlet extends HttpServlet {
                         }
                     }
                     req.setAttribute("products", results);
-                    req.getRequestDispatcher("/WEB-INF/jsp/OrderOnline.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/customer/OrderOnline.jsp").forward(req, resp);
                     break;
                 }
                 case "add": {
@@ -49,13 +49,13 @@ public class OrderOnlineServlet extends HttpServlet {
                     req.setAttribute("msg", message);
                     List<Product> products = productDAO.getAllProduct();
                     req.setAttribute("products", products);
-                    req.getRequestDispatcher("/WEB-INF/jsp/OrderOnline.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/customer/OrderOnline.jsp").forward(req, resp);
                     break;
                 }
                 case "list":
                 default: {
                     req.setAttribute("products", productDAO.getAllProduct());
-                    req.getRequestDispatcher("/WEB-INF/jsp/OrderOnline.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/customer/OrderOnline.jsp").forward(req, resp);
                     break;
                 }
             }

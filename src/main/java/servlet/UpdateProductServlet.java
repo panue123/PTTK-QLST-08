@@ -33,20 +33,20 @@ public class UpdateProductServlet extends HttpServlet {
                         }
                     }
                     req.setAttribute("products", results);
-                    req.getRequestDispatcher("/WEB-INF/jsp/UpdateProduct.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/warehousestaff/UpdateProduct.jsp").forward(req, resp);
                     break;
                 }
                 case "edit": {
                     int id = Integer.parseInt(req.getParameter("id"));
                     Product p = productDAO.getProductDetail(id);
                     req.setAttribute("product", p);
-                    req.getRequestDispatcher("/WEB-INF/jsp/UpdateDetailedProduct.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/warehousestaff/UpdateDetailedProduct.jsp").forward(req, resp);
                     break;
                 }
                 case "list":
                 default: {
                     req.setAttribute("products", productDAO.getAllProduct());
-                    req.getRequestDispatcher("/WEB-INF/jsp/UpdateProduct.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/warehousestaff/UpdateProduct.jsp").forward(req, resp);
                     break;
                 }
             }

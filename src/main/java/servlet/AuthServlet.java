@@ -23,7 +23,7 @@ public class AuthServlet extends HttpServlet {
             if (session != null) session.invalidate();
             req.setAttribute("msg", "logout_success");
         }
-        req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsp/user/login.jsp").forward(req, resp);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class AuthServlet extends HttpServlet {
 
         if (username == null || username.trim().isEmpty() || password == null || password.isEmpty()) {
             req.setAttribute("error", "Please enter your username and password");
-            req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/user/login.jsp").forward(req, resp);
             return;
         }
 
@@ -47,21 +47,21 @@ public class AuthServlet extends HttpServlet {
                 session.setAttribute("role", customer.getRole());
 
                 if (customer.getRole().equals("CUSTOMER")) {
-                    req.getRequestDispatcher("/WEB-INF/jsp/Customer.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/customer/Customer.jsp").forward(req, resp);
                 } else {
                     session.setAttribute("admin", customer);
-                    req.getRequestDispatcher("/WEB-INF/jsp/WarehouseStaff.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/WEB-INF/jsp/warehousestaff/WarehouseStaff.jsp").forward(req, resp);
                 }
 
             } else {
                 req.setAttribute("error", "Wrong username or password. Please check again");
-                req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
+                req.getRequestDispatcher("/WEB-INF/jsp/user/login.jsp").forward(req, resp);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("error", "Error: " + e.getMessage());
-            req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/user/login.jsp").forward(req, resp);
         }
     }
 }

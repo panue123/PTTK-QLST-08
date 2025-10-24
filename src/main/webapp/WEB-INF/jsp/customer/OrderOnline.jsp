@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -47,7 +48,7 @@
         <tr>
           <td>${p.name}</td>
           <td>${p.description}</td>
-          <td>${p.price} VND</td>
+          <td><fmt:formatNumber value="${p.price}" pattern="#,##0.##"/> VND</td>
           <td>${p.quantity}</td>
           <td>
             <form method="get" action="${pageContext.request.contextPath}/OrderOnlineServlet">

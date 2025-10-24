@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,13 +57,13 @@
             <tr>
               <td>${item.product.name}</td>
               <td>${item.quantity}</td>
-              <td>${item.product.price} VND</td>
-              <td>${item.product.price * item.quantity} VND</td>
+              <td><fmt:formatNumber value="${item.product.price}" pattern="#,##0.##"/> VND</td>
+              <td><fmt:formatNumber value="${item.product.price * item.quantity}" pattern="#,##0.##"/> VND</td>
             </tr>
           </c:forEach>
           <tr>
             <td colspan="3" class="total-label">Total:</td>
-            <td class="total-value">${tempOrder.totalPrice} VND</td>
+            <td class="total-value"><fmt:formatNumber value="${tempOrder.totalPrice}" pattern="#,##0.##"/> VND</td>
           </tr>
           </tbody>
         </table>

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +36,8 @@
                 <textarea id="description" name="description" rows="4">${product.description}</textarea>
 
                 <label for="price">Price:</label>
-                <input type="number" id="price" step="0.01" name="price" value="${product.price}" required />
+                <input type="number" id="price" step="0.01" name="price" value="<fmt:formatNumber value='${product.price}' type='number' pattern='##########.##'/>" required />
+
 
                 <label for="quantity">Quantity:</label>
                 <input type="number" id="quantity" name="quantity" value="${product.quantity}" required />

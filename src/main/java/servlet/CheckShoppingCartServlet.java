@@ -1,6 +1,5 @@
 package servlet;
 
-import dao.ProductDAO;
 import model.*;
 
 import javax.servlet.ServletException;
@@ -58,7 +57,7 @@ public class CheckShoppingCartServlet extends HttpServlet {
                 break;
         }
         req.setAttribute("cart", cart);
-        req.getRequestDispatcher("/WEB-INF/jsp/CheckShoppingCart.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsp/customer/CheckShoppingCart.jsp").forward(req, resp);
     }
 
     private void updateCart(HttpServletRequest req, List<OrderDetail> cart, HttpSession session) {

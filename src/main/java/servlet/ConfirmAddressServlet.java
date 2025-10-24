@@ -37,7 +37,7 @@ public class ConfirmAddressServlet extends HttpServlet {
             req.setAttribute("addresses", addresses);
             req.setAttribute("cart", cart);
             req.setAttribute("tmp", tmp);
-            req.getRequestDispatcher("/WEB-INF/jsp/ConfirmAddress.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/customer/ConfirmAddress.jsp").forward(req, resp);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -97,10 +97,10 @@ public class ConfirmAddressServlet extends HttpServlet {
             if (orderId > 0) {
                 session.removeAttribute("tempOrderDetails");
                 req.setAttribute("msg", "Checkout successful!");
-                req.getRequestDispatcher("/WEB-INF/jsp/Customer.jsp").forward(req, resp);
+                req.getRequestDispatcher("/WEB-INF/jsp/customer/Customer.jsp").forward(req, resp);
             } else {
                 req.setAttribute("msg", "Fail to checkout!");
-                req.getRequestDispatcher("/WEB-INF/jsp/Customer.jsp").forward(req, resp);
+                req.getRequestDispatcher("/WEB-INF/jsp/customer/Customer.jsp").forward(req, resp);
             }
 
         } catch (Exception e) {

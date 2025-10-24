@@ -33,6 +33,6 @@ public class CustomerDAO {
                 }
             }
         }
-        return null; //
+        return null;
     }
 }

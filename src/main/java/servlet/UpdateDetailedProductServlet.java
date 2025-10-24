@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/UpdateDetailedProductServlet")
 public class UpdateDetailedProductServlet extends HttpServlet {
@@ -15,6 +14,10 @@ public class UpdateDetailedProductServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html; charset=UTF-8");
+
         String action = req.getParameter("action");
 
         try {
@@ -29,11 +32,11 @@ public class UpdateDetailedProductServlet extends HttpServlet {
                 productDAO.updateProduct(p);
                 req.setAttribute("msg", "Updated sucessfully");
                 req.setAttribute("products", productDAO.getAllProduct());
-                req.getRequestDispatcher("/WEB-INF/jsp/UpdateProduct.jsp").forward(req, resp);
+                req.getRequestDispatcher("/WEB-INF/jsp/warehousestaff/UpdateProduct.jsp").forward(req, resp);
             }
         } catch (Exception e) {
             req.setAttribute("msg", "Error: " + e.getMessage());
-            req.getRequestDispatcher("/WEB-INF/jsp/UpdateProduct.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/warehousestaff/UpdateProduct.jsp").forward(req, resp);
         }
     }
 }
