@@ -17,7 +17,7 @@ public class OnlineOrderDAO {
             try {
                 conn.setAutoCommit(false);
 
-                String sqlOrder = "INSERT INTO onlineOrder (customerId, addressId, status, orderDate) VALUES (?,?,?,?)";
+                String sqlOrder = "INSERT INTO tblOnlineOrder (customerId, addressId, status, orderDate) VALUES (?,?,?,?)";
                 try (PreparedStatement ps = conn.prepareStatement(sqlOrder, Statement.RETURN_GENERATED_KEYS)) {
                     ps.setInt(1, order.getCustomer().getId());
                     ps.setInt(2, order.getAddress().getId());
@@ -38,9 +38,9 @@ public class OnlineOrderDAO {
 
                 orderDetails.sort(Comparator.comparingInt(od -> od.getProduct().getId()));
 
-                String selectProduct = "SELECT quantity FROM product WHERE id = ? FOR UPDATE";
-                String updateProduct = "UPDATE product SET quantity = quantity - ? WHERE id = ?";
-                String insertOrderDetail = "INSERT INTO orderDetail (onlineOrderId, productId, price, quantity) VALUES (?,?,?,?)";
+                String selectProduct = "SELECT quantity FROM tblProduct WHERE id = ? FOR UPDATE";
+                String updateProduct = "UPDATE tblProduct SET quantity = quantity - ? WHERE id = ?";
+                String insertOrderDetail = "INSERT INTO tblOrderDetail (onlineOrderId, productId, price, quantity) VALUES (?,?,?,?)";
 
                 try (PreparedStatement psSelect = conn.prepareStatement(selectProduct);
                      PreparedStatement psUpdate = conn.prepareStatement(updateProduct);

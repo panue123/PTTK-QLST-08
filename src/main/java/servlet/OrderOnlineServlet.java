@@ -26,11 +26,13 @@ public class OrderOnlineServlet extends HttpServlet {
             cart = new ArrayList<>();
             session.setAttribute("tempOrderDetails", cart);
         }
+
         try {
             switch (action) {
                 case "search": {
                     String name = req.getParameter("name");
                     List<Product> results;
+
                     if (name == null || name.trim().isEmpty()) {
                         results = productDAO.getAllProduct();
                         req.setAttribute("msg", "Please enter a product name to search.");
@@ -40,18 +42,39 @@ public class OrderOnlineServlet extends HttpServlet {
                             req.setAttribute("msg", "No product found for: " + name);
                         }
                     }
+
                     req.setAttribute("products", results);
                     req.getRequestDispatcher("/WEB-INF/jsp/customer/OrderOnline.jsp").forward(req, resp);
                     break;
                 }
+
                 case "add": {
-                    String message = addToCart(req, cart);
-                    req.setAttribute("msg", message);
-                    List<Product> products = productDAO.getAllProduct();
-                    req.setAttribute("products", products);
-                    req.getRequestDispatcher("/WEB-INF/jsp/customer/OrderOnline.jsp").forward(req, resp);
+                    try {
+                        String message = addToCart(req, cart);
+                        req.setAttribute("msg", message);
+                        String requestedWith = req.getHeader("X-Requested-With");
+
+                        if ("XMLHttpRequest".equals(requestedWith)) {
+                            resp.setContentType("application/json");
+                            resp.setCharacterEncoding("UTF-8");
+                            resp.getWriter().write("{\"msg\": \"" + message + "\"}");
+                        } else {
+                            List<Product> products = productDAO.getAllProduct();
+                            req.setAttribute("products", products);
+                            String page = req.getParameter("page");
+                            req.setAttribute("currentPage", page != null ? page : "1");
+                            req.getRequestDispatcher("/WEB-INF/jsp/customer/OrderOnline.jsp").forward(req, resp);
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                        resp.setContentType("application/json");
+                        resp.getWriter().write("{\"msg\": \"Error adding to cart!\"}");
+                    }
                     break;
                 }
+
                 case "list":
                 default: {
                     req.setAttribute("products", productDAO.getAllProduct());
@@ -81,16 +104,17 @@ public class OrderOnlineServlet extends HttpServlet {
                     return "❌ Quantity exceeds stock! Available: " + product.getQuantity();
                 }
                 od.setQuantity(newQty);
-                return "✅ Updated quantity in cart!";
+                return "Updated quantity in cart!";
             }
         }
 
         if (qty > product.getQuantity()) {
             return "❌ Quantity exceeds stock! Available: " + product.getQuantity();
         }
+
         OrderDetail od = new OrderDetail(product, qty);
         od.setPrice(product.getPrice());
         cart.add(od);
-        return "✅ Added to cart successfully!";
+        return "Added to cart successfully!";
     }
 }

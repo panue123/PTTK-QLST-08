@@ -11,7 +11,7 @@ public class ProductDAO{
 
     public List<Product> getProductByName(String name) throws SQLException {
         List<Product> products = new ArrayList<>();
-        String sql = "SELECT * FROM product WHERE name LIKE ? AND quantity > 0 ORDER BY id DESC";
+        String sql = "SELECT * FROM tblProduct WHERE name LIKE ? AND quantity > 0 ORDER BY id DESC";
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, "%" + name + "%");
@@ -32,7 +32,7 @@ public class ProductDAO{
 
     public List<Product> getAllProduct() throws SQLException {
         List<Product> products = new ArrayList<>();
-        String sql = "SELECT * FROM product WHERE quantity > 0 ORDER BY id DESC";
+        String sql = "SELECT * FROM tblProduct WHERE quantity > 0 ORDER BY id DESC";
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
@@ -50,7 +50,7 @@ public class ProductDAO{
     }
 
     public void updateProduct(Product product) throws SQLException {
-        String sql = "UPDATE product SET name=?, description=?, price=?, quantity=? WHERE id=?";
+        String sql = "UPDATE tblProduct SET name=?, description=?, price=?, quantity=? WHERE id=?";
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, product.getName());
@@ -63,7 +63,7 @@ public class ProductDAO{
     }
 
     public Product getProductDetail(int productId) throws SQLException {
-        String sql = "SELECT * FROM product WHERE id=?";
+        String sql = "SELECT * FROM tblProduct WHERE id=?";
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, productId);

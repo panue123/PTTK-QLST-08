@@ -1,16 +1,14 @@
-/* Tổng thể */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+    font-family: var(--app-font, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+    background: var(--bg-gradient);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #1f2937;
+    color: var(--text-color);
     margin: 0;
 }
 
-/* Navbar */
 .navbar {
     width: 100%;
     box-sizing: border-box;
@@ -56,7 +54,6 @@ body {
     background: #1d4ed8;
 }
 
-/* Container */
 .container {
     width: 90%;
     max-width: 700px;
@@ -80,7 +77,6 @@ body {
     margin-bottom: 35px;
 }
 
-/* Khu vực các nút hành động */
 .actions {
     display: flex;
     flex-direction: column;
@@ -88,7 +84,6 @@ body {
     gap: 20px;
 }
 
-/* ✅ FIX CHIỀU RỘNG ĐỀU */
 .actions .btn-primary,
 .actions form button {
     display: block;
@@ -114,8 +109,6 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
 }
-
-/* Đảm bảo form không phá layout */
 .form-action {
     width: 100%;
     display: flex;

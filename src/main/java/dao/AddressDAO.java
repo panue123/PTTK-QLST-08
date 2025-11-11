@@ -11,7 +11,7 @@ import java.util.List;
 public class AddressDAO {
 
     public List<Address> getAddressOfCustomer(int customerId) throws SQLException {
-        String sql = "SELECT id, street, province, country FROM address WHERE customerId = ?";
+        String sql = "SELECT id, street, province, country FROM tblAddress WHERE customerId = ?";
 
         List<Address> list = new ArrayList<>();
 

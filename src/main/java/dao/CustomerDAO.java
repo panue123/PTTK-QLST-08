@@ -12,7 +12,7 @@ public class CustomerDAO {
 
     public Customer findByUserId(int userId) throws SQLException {
 
-        String sql = "SELECT * FROM user WHERE id = ?";
+        String sql = "SELECT * FROM tblUser WHERE id = ?";
 
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

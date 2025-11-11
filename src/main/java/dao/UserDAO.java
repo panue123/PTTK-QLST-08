@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class UserDAO {
 
     public Integer login(String username, String password) throws SQLException {
-        String sql = "SELECT id, password FROM user WHERE username = ?";
+        String sql = "SELECT id, password FROM tblUser WHERE username = ?";
 
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

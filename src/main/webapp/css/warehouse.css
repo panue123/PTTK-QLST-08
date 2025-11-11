@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* căn nội dung từ trên */
+    justify-content: flex-start;
     color: #1f2937;
     margin: 0;
 }
@@ -14,18 +14,16 @@ body {
     width: 90%;
     max-width: 700px;
     margin: 80px auto;
-    background: rgba(255,255,255,0.9); /* nhạt, để nổi bật */
+    background: rgba(255,255,255,0.9);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-align: center;
 }
 
-
-/* Navbar */
 .navbar {
-    width: 100%; /* đảm bảo navbar full width */
-    box-sizing: border-box; /* padding không làm tràn */
+    width: 100%;
+    box-sizing: border-box;
     background: #1f2937;
     padding: 15px 30px;
     display: flex;
@@ -42,7 +40,7 @@ body {
 }
 
 .navbar .btn {
-    background: #2563eb; /* xanh dương */
+    background: #2563eb;
     color: #fff;
     padding: 8px 16px;
     border: none;
@@ -56,21 +54,17 @@ body {
 .navbar .btn:hover {
     background: #1d4ed8;
 }
-/* Greeting */
 .container h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #1f2937;
 }
-
-/* Subtitle / text dẫn */
 .container p.subtitle {
     font-size: 16px;
     color: #374151;
     margin-bottom: 30px;
 }
 
-/* Button */
 .container .btn-primary {
     display: inline-block;
     background: #2563eb;
@@ -89,7 +83,6 @@ body {
     background: #1d4ed8;
 }
 
-/* Footer / info box để đầy màn hình */
 .container .info {
     margin-top: 40px;
     font-size: 14px;
