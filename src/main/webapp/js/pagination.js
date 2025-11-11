@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const rowsPerPage = 3;
+    const rowsPerPage = 6;
     const table = document.getElementById("tableData");
     const pagination = document.getElementById("pagination");
 

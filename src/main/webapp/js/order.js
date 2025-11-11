@@ -38,6 +38,6 @@ function showMessage(message, type) {
         setTimeout(() => {
             box.style.display = "none";
             box.style.opacity = "1";
-        }, 450);
-    }, 4500);
+        }, 600);
+    }, 6000);
 }
